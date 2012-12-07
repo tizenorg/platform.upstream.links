@@ -20,7 +20,6 @@ frames, supports ssl, and has a little bit of JavaScript support.
 
 %prep
 %setup -q -n links-%{version}
-%patch2
 
 %build
 autoreconf -ifv
