@@ -36,6 +36,7 @@ make EXTRAA="-DSHOW_COLOR=TRUE"
 install links $RPM_BUILD_ROOT/usr/bin/links
 
 %files
+%license COPYING
 %defattr(-,root,root)
 /usr/bin/links
 %doc %{_mandir}/man1/links.1.gz
