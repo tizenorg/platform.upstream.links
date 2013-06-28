@@ -10,6 +10,7 @@ Summary:        Text-Based WWW Browser
 License:        GPL-2.0+
 Group:          Productivity/Networking/Web/Browsers
 Source:         links-%{version}.tar.bz2
+Source1001: 	links.manifest
 
 %description
 Links is like Lynx--an easy-to-use browser for HTML documents and other
@@ -20,6 +21,7 @@ frames, supports ssl, and has a little bit of JavaScript support.
 
 %prep
 %setup -q -n links-%{version}
+cp %{SOURCE1001} .
 
 %build
 autoreconf -ifv
@@ -36,6 +38,7 @@ make EXTRAA="-DSHOW_COLOR=TRUE"
 install links $RPM_BUILD_ROOT/usr/bin/links
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %defattr(-,root,root)
 /usr/bin/links
